@@ -1,0 +1,11 @@
+[project]
+name = "yourip"
+version = "0.0.1"
+description = "Shows the visiting IP address."
+dependencies = [
+    "flask",
+]
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"

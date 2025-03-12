@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Your IP Address{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+<p>
+Your IP is {{ remote_ip }}.
+</p>
+{% endblock %}
