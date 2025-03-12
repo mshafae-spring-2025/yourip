@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Hello!{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+<h2>
+Hello {{ name }}.
+</h2>
+<p>
+  <img src="{{ url_for('static', filename='IMG_6103.png') }}" />
+</p>
+{% endblock %}

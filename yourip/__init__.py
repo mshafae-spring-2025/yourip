@@ -2,7 +2,7 @@
 import logging
 from os import makedirs
 import sys
-from flask import Flask
+from flask import Flask, render_template
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -36,11 +36,15 @@ def create_app(test_config=None):
         logger.info(f"Instance dir already exists, {excpt}.")
     
     # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    @app.route("/")
+    @app.route("/hello/")
+    @app.route("/hello/<name>")
+    def hello(name='World'):
+        return render_template('hello.html', name=name.title())
 
     from . import show
     app.register_blueprint(show.bp)
     
     return app
+
+application = create_app()
